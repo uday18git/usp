@@ -19,19 +19,3 @@ int main()
                 }
         }
 }
-
-
-int main()
-{
-        struct stat mystat;
-        struct dirent *dir;
-        DIR *dp;
-        dp = opendir(".");
-        if(dp)
-        {
-                while(dir = readdir(dp)){
-                        stat(dir->dname,&mystat);
-                        printf("%ld %o %d %d %s\n",mystat.st_ino,mystat.st_mode,mystat.st_uid,mystat.st_gid,dir->dname);
-        }
-        }
-}
